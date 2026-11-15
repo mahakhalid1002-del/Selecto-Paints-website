@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scroll-paint {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #f8fafc;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.scroll-paint__base {
+  display: block;
+  width: 100%;
+  height: 46vh;
+  min-height: 260px;
+  max-height: 440px;
+  object-fit: cover;
+}
+
+.scroll-paint__coat {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background: linear-gradient(
+    to bottom,
+    #1d4ed8 0%,
+    #1d4ed8 46%,
+    #d6b07a 46%,
+    #d6b07a 100%
+  );
+  pointer-events: none;
+}
+
+.scroll-paint__roller {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 0;
+  transform: translateY(-2px);
+  pointer-events: none;
+}
+
+.scroll-paint__wet {
+  position: absolute;
+  left: 0;
+  right: 5.5rem;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #1e3a8a 20%, #1d4ed8);
+  box-shadow: 0 8px 16px rgba(29, 78, 216, 0.35);
+}
+
+.scroll-paint__tool {
+  position: absolute;
+  right: 0.75rem;
+  top: -18px;
+  width: 84px;
+  height: 36px;
+  filter: drop-shadow(0 6px 6px rgba(15, 23, 42, 0.28));
+}
